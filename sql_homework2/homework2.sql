@@ -11,9 +11,9 @@
       JOIN Categories ON Products.CategoryID = Categories.CategoryID
       JOIN Suppliers ON Products.SupplierID = Suppliers.SupplierID
       WHERE 
-        Categories.CategoryName = 'Beverages' 
+        Categories.CategoryName ='Beverages' 
         AND
-        Suppliers.Country = 'USA'   
+        Suppliers.Country ='USA'   
       ORDER BY Products.Price DESC 
       LIMIT 2 OFFSET 0
 
@@ -27,11 +27,11 @@
       SELECT Suppliers.Country FROM Categories
       JOIN Products ON Products.CategoryID = Categories.CategoryID
       JOIN Suppliers ON Products.SupplierID = Suppliers.SupplierID
-      WHERE Categories.CategoryName = 'Seafood'
+      WHERE Categories.CategoryName ='Seafood'
 
 -- Задача 5: Очистить поле ContactName у всех клиентов не из China
 
       UPDATE Customers
       SET 
-      ContactName = ''
-      WHERE Country != 'China'
+      ContactName =''
+      WHERE Country !='China'
